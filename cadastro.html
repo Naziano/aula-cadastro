@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- link do bootstrap -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!-- Link do FontAwesome -->
+    <link rel="stylesheet" href="fontAwesome/font-awesome.css">
+
+    <title>Cadastro</title>
+</head>
+
+<body>
+
+    <!-- o bootstrap trabalha com classes -->
+
+    <div class="container">
+
+        <!-- Inicio classe row do botstrap -->
+        <div class="row" style="margin-top: 30px;">
+
+            <div class="col-5">
+                <!-- Inicio do formulario-->
+                <form action="" method="GET">
+                    <fieldset>
+                        <legend>Cadastro de Contato</legend>
+                        <div class="form-group">
+                            <!--Grupo de componente nome-->
+                            <label for="nome">Nome: </label>
+                            <input type="text" class="form-control" name="nome" id="nome">
+                        </div>
+                        <!--final do Grupo de componente nome-->
+
+                        <div class="form-group">
+                            <!--Grupo de componente telefone-->
+                            <label for="fone">Telefone: </label>
+                            <input type="tel" class="form-control" name="fone" id="fone">
+                        </div>
+                        <!--final do Grupo de componente telefone-->
+
+                        <div class="form-group">
+                            <!--criado o form group pra checkbox-->
+                            <div class="form-group">
+                                <label for="">Sexo: </label>
+                            </div>
+                            <!-- Criado duas divs pra poder colocar o nome dentro -->
+                            <div class="form-group">
+                                <div class="form-check form-check-inline">
+                                    <label for="masc">
+                                        <input type="radio" name="sexo" id="masc"> Masculino
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <label for="feme">
+                                        <input type="radio" name="sexo" id="feme"> Feminino
+                                    </label>
+                                </div>
+
+                                <div class="form-check form-check-inline">
+                                    <label for="outros">
+                                        <input type="radio" name="sexo" id="outros"> Outros
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--fim do form group pra checkbox-->
+
+                        <div class="form-group">
+                            <!--inicio do form group pra cidade-->
+                            <label for="cidade">Cidade: </label>
+                            <select name="cidade" id="cidade" class="form-control">
+                                <option selected value="selecione">Selecione...</option>
+                                <option value="natal">Natal</option>
+                                <option value="mossoro">Mossoró</option>
+                                <option value="parnamirim">Parnamirim</option>
+                                <option value="sao goncalo">São Gonçalo</option>
+
+                            </select>
+                            <!--fim do form group pra cidade-->
+
+                        </div>
+
+                        <div class="form-group">
+                            <!--inicio do form group pra botão-->
+
+                            <div class="row">
+                                <div class="col-6">
+
+                                    <button type="button" onclick="cadastrar();"
+                                        class="btn btn-success btn-block">Salvar</button>
+                                    <!-- <button type="submit" class="btn btn-success btn-block">Salvar</button> -->
+
+                                </div>
+                                <div class="col-6">
+
+                                    <button type="reset" class="btn btn-danger btn-block">Limpar</button>
+                                    <!-- btn-block faz o botão ficar do tamanho baseado no pai, nesse caso, a div-col-6 -->
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <!--fim do form group pra botão-->
+
+                    </fieldset>
+                </form>
+            </div>
+            <!-- Fim do formulario-->
+
+            <div class="col-5">
+                <!-- Inicio da tabela-->
+                <fieldset>
+                    <legend>Lista de Contatos</legend>
+                    <table class="table table-striped table-hover" id="lista-contatos">
+                        <thead>
+                            <tr>
+                                <!-- The <tr> tag defines a row in an HTML table. -->
+                                <th>id</th>
+                                <!-- The <th> tag defines a header cell in an HTML table. -->
+                                <th>Nome</th>
+                                <th>Telefone</th>
+                                <th>Sexo</th>
+                                <th>Cidade</th>
+                                <th style="width: 100px;">Editar</th>
+                                <!-- <th>Exluir</th> -->
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            
+                        </tbody>
+                    </table>
+                </fieldset>
+            </div>
+        </div>
+
+        <!-- Link do JS -->
+        <script src="bootstrap/js/cadastro.js"></script>
+        <script src="bootstrap/js/jquery.js"></script>
+        <script src="bootstrap/js/popper.min.js"></script>
+        <script src="bootstrap/js/bootstrap.js"></script>
+
+</body>
+
+</html>
