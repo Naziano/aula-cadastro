@@ -82,8 +82,8 @@ function insereNaTabela(nome, fone, sexo, cidade) {
     editar.innerHTML = insereBotoesAcoes();
 }
 
-function insereBotoesAcoes() {
-    let botaoEditar = '<button type="button" class="btn btn-info btn-sm">';
+function insereBotoesAcoes(id) {
+    let botaoEditar = '<button type="button" onclick="buscaContatoPeloId(' + id + ')" class="btn btn-info btn-sm">';
     botaoEditar += '<i class="fas fa-user-edit"></i>';
     botaoEditar += '</button>';
 
@@ -92,4 +92,16 @@ function insereBotoesAcoes() {
     botaoRemover += ' </button>';
 
     return botaoEditar + botaoRemover;
+}
+
+function buscaContatoPeloId(id) {
+    let body = document.getElementById('lista-contatos').getElementsByTagName('tbody')[0];
+    let qtdLinhas = body.rows.length;
+    for (let i = 0; i < qtdLinhas; i++) {
+        if (body.rows[i].cells[0].innerHTML == id) {
+            let inputNome = document.getElementById('nome');
+            inputNome.value = body.rows[i].cells[1].innerHTML;
+            return;
+        }
+    }
 }
