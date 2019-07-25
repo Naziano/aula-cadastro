@@ -79,7 +79,7 @@ function insereNaTabela(nome, fone, sexo, cidade) {
     campoFone.innerHTML = fone;
     campoSexo.innerHTML = sexo;
     campoCidade.innerHTML = cidade;
-    editar.innerHTML = insereBotoesAcoes();
+    editar.innerHTML = insereBotoesAcoes(ultimaLinha + 1);
 }
 
 function insereBotoesAcoes(id) {
