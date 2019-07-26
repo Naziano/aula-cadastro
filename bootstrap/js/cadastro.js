@@ -47,12 +47,11 @@ function limparFormulario() {
 
 }
 
-
 function validaNome(nome) {
-
     let texto = nome.trim().toUpperCase();
     for (let i = 0; i < texto.length; i++) {
-        if (ehNumero(texto[i])) {
+        let caractere = texto[i].toLowerCase().charCodeAt(0);
+        if (caractere != 32 && (caractere < 97 || caractere > 122)) {
             return false;
         }
     }
